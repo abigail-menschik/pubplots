@@ -57,7 +57,7 @@ ppI <- function(dat) {
   # We'll be using the Mann-Whitney U test to determine significance
   
   #2 groups
-  if(length(unique(dat$Group))=="2"){
+  if(length(unique(dat$Group))==2){
     #running the test btwn each group
     test1_2 <- wilcox.test(which(dat$Group==1),which(dat$Group==2), paired=FALSE)$p.val
     
@@ -71,7 +71,7 @@ ppI <- function(dat) {
   }
   
   #if there are 3 groups
-  if(length(unique(dat$Group))=="3"){
+  if(length(unique(dat$Group))==3){
     
     #running the test btwn each group
     test1_2 <- wilcox.test(which(dat$Group==1),which(dat$Group==2), paired=FALSE)$p.val
